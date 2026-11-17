@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dipakjaisi536-ctrl.github.io/phoolbari-flower-shop/sitemap.xml

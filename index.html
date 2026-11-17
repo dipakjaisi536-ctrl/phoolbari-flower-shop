@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phoolbari (फूलबारी) — Nepal's Popular Online Flower Shop | Fresh Nepali &amp; Exotic Flowers</title>
+  <meta name="description" content="Order fresh Nepali flowers (Sayapatri, Makhamali, Laligurans, Godavari, Chameli, Parijat) and luxury roses, lilies, tulips &amp; orchids online at Phoolbari. Express 2-hour delivery, eSewa/Khalti/COD, and live shop location.">
+  <meta name="keywords" content="Phoolbari, Nepali flower shop, online flower delivery Nepal, Sayapatri marigold, Makhamali mala, Laligurans, roses Kathmandu, bouquet delivery Nepal, Tihar flowers, Puja flowers, Daraz style flower store">
+  <meta name="author" content="Phoolbari Floral Studio">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#059669">
+  <link rel="canonical" href="https://dipakjaisi536-ctrl.github.io/phoolbari-flower-shop/">
+
+  <!-- Open Graph / Social SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Phoolbari (फूलबारी)">
+  <meta property="og:title" content="Phoolbari (फूलबारी) — Nepal's Premier Online Flower Shop">
+  <meta property="og:description" content="Every traditional Nepali flower &amp; popular international bouquet delivered fresh to your doorstep. Pay via eSewa, Khalti, Fonepay or Cash on Delivery.">
+  <meta property="og:locale" content="en_NP">
+  <meta property="og:image" content="olia-gozha-9A_peGrSbZc-unsplash.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Phoolbari (फूलबारी) — Fresh Nepali &amp; Luxury Flowers Online">
+  <meta name="twitter:description" content="Shop Sayapatri, Makhamali, Laligurans, Roses, Orchids &amp; Wedding Bouquets with 2-hour express delivery.">
+
+  <!-- Typography: Rubik & Nunito Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet Interactive Map (No API key required) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer crossorigin=""></script>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data (JSON-LD) for Local SEO & Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Florist",
+        "name": "Phoolbari (फूलबारी) Flower Shop",
+        "description": "Popular Nepali online flower shop offering traditional Nepali blooms (Sayapatri, Makhamali, Laligurans, Godavari, Chameli) and international bouquets with express delivery.",
+        "priceRange": "NPR 250 - NPR 8,500",
+        "telephone": "+977-9800000000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Durbar Marg & Express Current-Location Hub",
+          "addressLocality": "Kathmandu",
+          "addressRegion": "Bagmati",
+          "addressCountry": "NP"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "06:00",
+            "closes": "21:00"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you deliver traditional Nepali flowers like Sayapatri and Makhamali?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Phoolbari stocks fresh Sayapatri (Marigold), Makhamali (Globe Amaranth), Laligurans, Godavari, Chameli, Parijat, and Kamal year-round and in bulk during Tihar, Dashain, and Teej."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What payment methods are supported on Phoolbari?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Just like Daraz, you can pay securely using eSewa, Khalti, Fonepay QR, Debit/Credit Card, or Cash on Delivery (COD)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I find the Phoolbari shop at my current location?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use the 'Pin Shop at My Current Location' button in the header or map section to view our nearest express hub at your live GPS location and get instant directions."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Top Utility Strip -->
+  <div class="top-strip">
+    <div class="container top-strip-inner">
+      <div id="location-banner">
+        <span>Express Delivery Across Nepal &bull; Free Shipping Over NPR 1,500</span>
+      </div>
+      <div class="top-strip-links">
+        <button type="button" class="top-strip-btn" id="header-locate-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="header-location-label">Pin Current Location</span>
+        </button>
+        <button type="button" class="top-strip-btn" id="open-orders-top-btn">Track Order</button>
+        <button type="button" class="top-strip-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">Dark Mode</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky E-Commerce Header -->
+  <header class="site-header">
+    <div class="container header-main">
+      <a href="#top" class="brand" aria-label="Phoolbari Flower Shop Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9m7.5 0a4.5 4.5 0 1 1-4.5 4.5m4.5-4.5H15m-3 4.5V15"/><circle cx="12" cy="12" r="2.5"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>Phoolbari फूलबारी</strong>
+          <span>Nepal's Popular Flower Mart</span>
+        </span>
+      </a>
+
+      <div class="search-wrap">
+        <form class="search-form" id="search-form" role="search">
+          <label for="search-input" class="visually-hidden">Search Nepali and exotic flowers</label>
+          <input type="search" id="search-input" class="search-input" placeholder="Search Sayapatri, Makhamali, Laligurans, Red Roses, Orchids..." autocomplete="off">
+          <button type="submit" class="search-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search</span>
+          </button>
+        </form>
+        <div class="search-suggestions" id="search-suggestions" role="listbox" aria-label="Search suggestions"></div>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="open-orders-btn" aria-label="View my orders">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <span>Orders</span>
+          <span class="badge-count" id="orders-count">0</span>
+        </button>
+
+        <button type="button" class="icon-btn cart-btn" id="open-cart-btn" aria-label="Open shopping cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span>Cart</span>
+          <span class="badge-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-bar" aria-label="Primary categories">
+      <div class="container nav-links">
+        <a href="#catalog" class="nav-link active" data-cat="all">All Flowers</a>
+        <a href="#catalog" class="nav-link" data-cat="nepali">Nepali Traditional</a>
+        <a href="#catalog" class="nav-link" data-cat="puja">Puja &amp; Tihar Mala</a>
+        <a href="#catalog" class="nav-link" data-cat="roses">Roses &amp; Romance</a>
+        <a href="#catalog" class="nav-link" data-cat="bouquets">Luxury Bouquets</a>
+        <a href="#catalog" class="nav-link" data-cat="exotic">Orchids &amp; Exotic</a>
+        <a href="#location-section" class="nav-link">Shop Location</a>
+        <a href="#faq" class="nav-link">FAQs</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero Showcase -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div>
+            <span class="hero-pill">Nepal's #1 Fresh Floral Marketplace</span>
+            <h1>Fresh Nepali &amp; Exotic Flowers Delivered Today</h1>
+            <p>From fragrant Sayapatri, Makhamali, and Himalayan Laligurans to Dutch Tulips and Velvet Red Roses. Shop with Daraz-style checkout, eSewa/Khalti, and live location tracking.</p>
+            <div class="hero-cta-row">
+              <a href="#catalog" class="btn btn-accent">Shop Fresh Flowers</a>
+              <button type="button" class="btn btn-outline" id="hero-locate-btn">Pin Shop at My Location</button>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>20+ Varieties</strong>
+              <span>Nepali &amp; Global Blooms</span>
+            </div>
+            <div class="hero-stat">
+              <strong>2-Hour Delivery</strong>
+              <span>Express Local Dispatch</span>
+            </div>
+            <div class="hero-stat">
+              <strong>100% Fresh</strong>
+              <span>Farm-to-Doorstep Guarantee</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-card">
+            <img src="olia-gozha-9A_peGrSbZc-unsplash.jpg" alt="Freshly arranged Phoolbari floral bouquet with vibrant seasonal blooms" fetchpriority="high">
+            <div class="hero-photo-overlay">
+              <div>
+                <strong>Tihar &amp; Wedding Special</strong>
+                <div style="font-size:0.85rem;color:#d1fae5;">Use code <code>PHOOL10</code> for 10% OFF</div>
+              </div>
+              <button type="button" class="btn btn-accent btn-sm" id="copy-promo-btn">Apply PHOOL10</button>
+            </div>
+          </div>
+
+          <div class="flash-banner" aria-label="Flash sale countdown">
+            <div class="flash-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Flash Deals Ending In</span>
+            </div>
+            <div class="countdown" id="flash-countdown">
+              <span id="cd-hours">05</span>:
+              <span id="cd-mins">42</span>:
+              <span id="cd-secs">18</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flower Catalog Section -->
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Every Nepali &amp; Popular Flower Collection</h2>
+            <p class="section-subtitle">Handpicked daily from Ilam, Godavari, Pokhara, and Kathmandu Valley nurseries.</p>
+          </div>
+          <span id="result-count" style="font-weight:700;color:var(--color-primary);">Showing 20 flowers</span>
+        </div>
+
+        <div class="category-pills" role="tablist" aria-label="Filter flowers by category">
+          <button type="button" class="cat-pill active" data-cat="all">All Flowers (20)</button>
+          <button type="button" class="cat-pill" data-cat="nepali">Nepali Native</button>
+          <button type="button" class="cat-pill" data-cat="puja">Puja &amp; Tihar</button>
+          <button type="button" class="cat-pill" data-cat="roses">Roses</button>
+          <button type="button" class="cat-pill" data-cat="bouquets">Bouquets &amp; Lilies</button>
+          <button type="button" class="cat-pill" data-cat="exotic">Orchids &amp; Exotic</button>
+        </div>
+
+        <div class="toolbar">
+          <div class="toolbar-controls">
+            <label for="sort-select"><strong>Sort:</strong></label>
+            <select id="sort-select" class="select-control">
+              <option value="popular">Best Selling</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+
+            <label for="price-select"><strong>Budget:</strong></label>
+            <select id="price-select" class="select-control">
+              <option value="all">All Prices</option>
+              <option value="under-600">Under NPR 600</option>
+              <option value="600-1500">NPR 600 - 1,500</option>
+              <option value="above-1500">NPR 1,500+</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn btn-ghost btn-sm" id="reset-filters-btn">Reset Filters</button>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Live Current Location & Shop Map Section -->
+    <section class="section location-section" id="location-section">
+      <div class="container location-grid">
+        <div class="location-info">
+          <div>
+            <h2>Phoolbari Shop at Your Current Location</h2>
+            <p class="section-subtitle">Pin our express floral hub directly to your live GPS location for instant 2-hour delivery or pickup directions.</p>
+          </div>
+
+          <div class="location-status-box">
+            <strong id="loc-title">Default Hub: Kathmandu Valley, Nepal</strong>
+            <p id="loc-address" style="font-size:0.92rem;color:var(--color-muted-foreground);">Click the button below to detect your current location and place Phoolbari Express Shop right where you are.</p>
+            <p id="loc-coords" style="font-size:0.82rem;margin-top:0.4rem;font-weight:700;color:var(--color-primary);"></p>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+            <button type="button" class="btn btn-primary" id="detect-location-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/><circle cx="12" cy="12" r="8"/></svg>
+              <span>Pin Shop at My Current Location</span>
+            </button>
+            <a id="gmaps-link" href="https://maps.google.com/?q=27.7172,85.3240" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Open in Google Maps</a>
+          </div>
+
+          <ul class="location-details-list">
+            <li><strong>Hours:</strong> Daily 6:00 AM &ndash; 9:00 PM (Nepal Standard Time)</li>
+            <li><strong>Phone:</strong> +977 980-000-0000 (WhatsApp &amp; Viber Orders)</li>
+            <li><strong>Express Zone:</strong> Same-day 2-hour delivery within 15 km of your pinned hub</li>
+          </ul>
+        </div>
+
+        <div id="shop-map" class="map-container" aria-label="Interactive map showing Phoolbari flower shop at your current location"></div>
+      </div>
+    </section>
+
+    <!-- Trust & Why Choose Phoolbari -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Why Shop at Phoolbari?</h2>
+            <p class="section-subtitle">Built like Daraz for effortless ordering, trusted across Nepal.</p>
+          </div>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Farm-Fresh Guarantee</h3>
+            <p class="section-subtitle">Harvested every morning from local Nepali growers so garlands &amp; bouquets stay vibrant for days.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3>eSewa, Khalti &amp; COD</h3>
+            <p class="section-subtitle">Seamless Nepali digital wallets, Fonepay QR, Cards, or Cash on Delivery at your doorstep.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>2-Hour Express Dispatch</h3>
+            <p class="section-subtitle">Real-time order tracking from bouquet crafting to doorstep delivery.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Custom Gift Notes</h3>
+            <p class="section-subtitle">Include a complimentary Nepali or English greeting card with every bouquet order.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO FAQ Section -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about ordering flowers online at Phoolbari.</p>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Which Nepali flowers are available at Phoolbari?</summary>
+            <p>We carry Sayapatri (Marigold), Makhamali (Globe Amaranth), Laligurans (Rhododendron), Godavari (Chrysanthemum), Chameli &amp; Beli (Jasmine), Parijat, Kamal (Lotus), Surya Mukhi (Sunflower), and Mandar, alongside roses, lilies, tulips, and orchids.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How does the Daraz-style order and tracking system work?</summary>
+            <p>Add flowers to your cart or click Buy Now, select items in your cart, apply promo code <strong>PHOOL10</strong>, enter your delivery address (or auto-fill using GPS), choose eSewa/Khalti/Fonepay/COD, and track your order status live in the Orders panel.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I view the flower shop at my current location?</summary>
+            <p>Click <strong>Pin Shop at My Current Location</strong> in the top bar or map section. Your browser will pin the Phoolbari Express Hub directly to your live coordinates with an instant Google Maps link.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Phoolbari (फूलबारी)</h3>
+          <p style="font-size:0.9rem;color:#d1fae5;">Nepal's most loved online flower shop for authentic Nepali Puja garlands, Tihar flowers, wedding arrangements, and luxury bouquets.</p>
+        </div>
+        <div>
+          <h3>Popular Categories</h3>
+          <ul>
+            <li><a href="#catalog">Sayapatri &amp; Makhamali</a></li>
+            <li><a href="#catalog">Laligurans &amp; Godavari</a></li>
+            <li><a href="#catalog">Red Roses &amp; Lilies</a></li>
+            <li><a href="#catalog">Orchids &amp; Tulips</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Customer Care</h3>
+          <ul>
+            <li><a href="#location-section">Live Shop Location</a></li>
+            <li><a href="#faq">Delivery &amp; Payment FAQ</a></li>
+            <li><span>Promo: PHOOL10 (10% Off)</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Payment Partners</h3>
+          <ul>
+            <li>eSewa &amp; Khalti Wallet</li>
+            <li>Fonepay QR</li>
+            <li>Cash on Delivery (COD)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Phoolbari Flower Shop Nepal. All rights reserved.</span>
+        <span>Freshly crafted with semantic HTML, CSS &amp; JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Native <dialog> Modals (Accessible, Top-Layer, Light-Dismiss)
+       ======================================================================== -->
+
+  <!-- 1. Daraz-style Cart Modal -->
+  <dialog id="cart-dialog" closedby="any" aria-labelledby="cart-dialog-title">
+    <div class="dialog-head">
+      <h2 id="cart-dialog-title">Your Flower Cart</h2>
+      <button type="button" class="dialog-close" data-close-dialog aria-label="Close cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body" id="cart-body"></div>
+  </dialog>
+
+  <!-- 2. Daraz-style Checkout Modal -->
+  <dialog id="checkout-dialog" closedby="any" aria-labelledby="checkout-dialog-title">
+    <div class="dialog-head">
+      <h2 id="checkout-dialog-title">Express Checkout</h2>
+      <button type="button" class="dialog-close" data-close-dialog aria-label="Close checkout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body">
+      <form id="checkout-form" class="form-grid">
+        <div class="form-row-2">
+          <div class="field">
+            <label for="co-name">Full Name</label>
+            <input type="text" id="co-name" name="name" autocomplete="name" required data-error="co-name-err" placeholder="e.g., Sita Sharma">
+            <div id="co-name-err" class="error-msg">Error: Please enter your full name.</div>
+          </div>
+          <div class="field">
+            <label for="co-phone">Mobile Number (Nepal)</label>
+            <span id="co-phone-hint" class="hint">10-digit mobile number (e.g., 9841000000)</span>
+            <input type="tel" id="co-phone" name="phone" autocomplete="tel" required pattern="[0-9+\-\s]{7,15}" aria-describedby="co-phone-hint" data-error="co-phone-err" placeholder="98XXXXXXXX">
+            <div id="co-phone-err" class="error-msg">Error: Enter a valid phone number.</div>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label for="co-city">City / District</label>
+            <input type="text" id="co-city" name="city" autocomplete="address-level2" required data-error="co-city-err" placeholder="Kathmandu, Pokhara, Lalitpur...">
+            <div id="co-city-err" class="error-msg">Error: Please enter your city.</div>
+          </div>
+          <div class="field">
+            <label for="co-slot">Delivery Slot</label>
+            <select id="co-slot" name="slot" required>
+              <option value="Express 2-Hour Delivery">Express 2-Hour Delivery</option>
+              <option value="Same-Day Evening (4 PM - 8 PM)">Same-Day Evening (4 PM - 8 PM)</option>
+              <option value="Tomorrow Morning (7 AM - 11 AM)">Tomorrow Morning (7 AM - 11 AM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">
+            <label for="co-address" style="margin:0;">Full Delivery Address</label>
+            <button type="button" class="btn btn-ghost btn-sm" id="autofill-loc-btn">Use Current GPS Location</button>
+          </div>
+          <textarea id="co-address" name="address" rows="2" autocomplete="street-address" required data-error="co-addr-err" placeholder="Tole, Ward No., Landmark..."></textarea>
+          <div id="co-addr-err" class="error-msg">Error: Please enter your delivery address.</div>
+        </div>
+
+        <div class="field">
+          <label for="co-note">Gift Card Message (Optional)</label>
+          <input type="text" id="co-note" name="note" placeholder="Write a warm wish in Nepali or English...">
+        </div>
+
+        <fieldset style="border:none;">
+          <legend style="font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;">Select Payment Method</legend>
+          <div class="payment-options">
+            <label class="payment-card"><input type="radio" name="payment" value="eSewa" checked> eSewa</label>
+            <label class="payment-card"><input type="radio" name="payment" value="Khalti"> Khalti</label>
+            <label class="payment-card"><input type="radio" name="payment" value="Fonepay QR"> Fonepay QR</label>
+            <label class="payment-card"><input type="radio" name="payment" value="Cash on Delivery"> Cash on Delivery</label>
+          </div>
+        </fieldset>
+
+        <div class="summary-box" id="checkout-summary"></div>
+
+        <button type="submit" class="btn btn-accent">Place Order Now</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- 3. Product Quick View Modal -->
+  <dialog id="quickview-dialog" closedby="any" aria-labelledby="qv-title">
+    <div class="dialog-head">
+      <h2 id="qv-title">Flower Details</h2>
+      <button type="button" class="dialog-close" data-close-dialog aria-label="Close details">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body" id="qv-body"></div>
+  </dialog>
+
+  <!-- 4. My Orders & Live Tracking Modal -->
+  <dialog id="orders-dialog" closedby="any" aria-labelledby="orders-dialog-title">
+    <div class="dialog-head">
+      <h2 id="orders-dialog-title">My Orders &amp; Tracking</h2>
+      <button type="button" class="dialog-close" data-close-dialog aria-label="Close orders">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body" id="orders-body"></div>
+  </dialog>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
