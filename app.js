@@ -120,7 +120,7 @@
       oldPrice: 1100,
       rating: 4.8,
       sold: 445,
-      image: 'https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=640&q=80',
+      image: 'photo-1613539246066-78db6ec4ff0f.avif',
       desc: 'Radiant golden sunflowers wrapped in kraft paper with eucalyptus greenery to brighten any celebration.'
     },
     {
@@ -133,7 +133,7 @@
       oldPrice: 800,
       rating: 4.8,
       sold: 230,
-      image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=640&q=80',
+      image: 'photo-1471696035578-3d8c78d99684.avif',
       desc: 'Double-layered Arabian jasmine and rose-petal wedding varmala crafted for Nepali ceremonies.'
     },
     {
@@ -146,7 +146,7 @@
       oldPrice: 320,
       rating: 4.7,
       sold: 612,
-      image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=640&q=80',
+      image: 'photo-1508808703020-ef18109db02f.avif',
       desc: 'Complete daily Puja pack with Mandar, red hibiscus, Dubo grass, and fresh Sayapatri petals.'
     },
     {
@@ -159,7 +159,7 @@
       oldPrice: 1550,
       rating: 4.9,
       sold: 980,
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=640&q=80',
+      image: 'olia-gozha-9A_peGrSbZc-unsplash.jpg',
       desc: 'Long-stemmed velvety red roses styled with baby’s breath and satin ribbon for anniversaries and love notes.'
     },
     {
@@ -172,7 +172,7 @@
       oldPrice: 2700,
       rating: 4.9,
       sold: 405,
-      image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=640&q=80',
+      image: 'photo-1487139975590-b4f1dce9b035.avif',
       desc: 'Soft pastel pink roses and lush peonies arranged in a keepsake Phoolbari gift box.'
     },
     {
@@ -185,7 +185,7 @@
       oldPrice: 1950,
       rating: 4.8,
       sold: 289,
-      image: 'https://images.unsplash.com/photo-1520763185298-1b434c919102?w=640&q=80',
+      image: 'premium_photo-1674986175088-2d7dda41f7f8.avif',
       desc: 'Aromatic Oriental white lilies symbolizing purity, grace, and heartfelt congratulations.'
     },
     {
@@ -198,7 +198,7 @@
       oldPrice: 2250,
       rating: 4.8,
       sold: 214,
-      image: 'https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=640&q=80',
+      image: 'photo-1589100534833-475e31a17b4e.avif',
       desc: 'Crisp imported tulips in coral, yellow, and blush tones—an unforgettable modern gift.'
     },
     {
@@ -211,7 +211,7 @@
       oldPrice: 2900,
       rating: 4.9,
       sold: 198,
-      image: 'https://images.unsplash.com/photo-1566907225472-514215c9e5cd?w=640&q=80',
+      image: 'premium_photo-1676475964992-6404b8db0b53.avif',
       desc: 'Long-lasting purple Sunakhari orchid stems in a ceramic planter for offices and luxury gifting.'
     },
     {
@@ -224,7 +224,7 @@
       oldPrice: 2100,
       rating: 4.7,
       sold: 164,
-      image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=640&q=80',
+      image: 'photo-1508808703020-ef18109db02f.avif',
       desc: 'Voluminous sky-blue hydrangea blooms paired with soft white fillers in Korean-style wrapping.'
     },
     {
@@ -237,7 +237,7 @@
       oldPrice: 950,
       rating: 4.7,
       sold: 356,
-      image: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=640&q=80',
+      image: 'photo-1487139975590-b4f1dce9b035.avif',
       desc: 'Ruffled pink and peach carnations loved for Mother’s Day, birthdays, and teacher appreciation.'
     },
     {
@@ -250,7 +250,7 @@
       oldPrice: 850,
       rating: 4.8,
       sold: 478,
-      image: 'https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=640&q=80',
+      image: 'photo-1471696035578-3d8c78d99684.avif',
       desc: 'Airy cloud-like Gypsophila bouquet wrapped in matte emerald paper—minimalist and aesthetic.'
     },
     {
@@ -263,7 +263,7 @@
       oldPrice: 1150,
       rating: 4.8,
       sold: 290,
-      image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=640&q=80',
+      image: 'photo-1613539246066-78db6ec4ff0f.avif',
       desc: 'Cheerful multicolor Gerbera daisies arranged in a hand-woven Nepali bamboo basket.'
     },
     {
@@ -799,9 +799,27 @@
   let map;
   let marker;
 
+  function renderFallbackMap() {
+    const mapEl = document.getElementById('shop-map');
+    if (!mapEl || typeof L !== 'undefined') return;
+    const { lat, lng, label } = state.location;
+    mapEl.innerHTML = `
+      <div style="height:100%;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;background:radial-gradient(circle at 50% 40%, #d1fae5 0%, #ecfdf5 65%, #a7f3d0 100%);color:#064e3b;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="#ea580c" stroke="#064e3b" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="#ffffff"/></svg>
+        <h3 style="margin:0.75rem 0 0.35rem;">Phoolbari Express Shop Pin</h3>
+        <p style="max-width:34ch;font-size:0.95rem;margin-bottom:0.5rem;">${label}</p>
+        <code style="background:#ffffff;padding:0.35rem 0.75rem;border-radius:999px;border:1px solid #a7f3d0;font-weight:700;">${lat.toFixed(5)}, ${lng.toFixed(5)}</code>
+      </div>`;
+  }
+
   function initMap() {
     const mapEl = document.getElementById('shop-map');
-    if (!mapEl || typeof L === 'undefined') return;
+    if (!mapEl) return;
+    if (typeof L === 'undefined') {
+      renderFallbackMap();
+      updateLocationUI();
+      return;
+    }
 
     const { lat, lng, label } = state.location;
     map = L.map(mapEl).setView([lat, lng], 14);
@@ -830,6 +848,8 @@
       map.setView([lat, lng], 15);
       marker.setLatLng([lat, lng]);
       marker.bindPopup(`<strong>Phoolbari Flower Shop</strong><br>${label}`).openPopup();
+    } else {
+      renderFallbackMap();
     }
   }
 
